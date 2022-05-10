@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 public class RentServiceTest {
     private final RentService underTest = RentService.getInstance();
 
+    // region tests calculateExtraCost()
     @Test
     public void calculateExtraCost_ShouldThrow_AgeUnder18() {
         // Given
@@ -68,4 +69,5 @@ public class RentServiceTest {
         // Then
         Assert.assertEquals(expected, extraCosts, 0.1);
     }
+    // endregion
 }
