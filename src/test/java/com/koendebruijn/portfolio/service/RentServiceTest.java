@@ -1,9 +1,8 @@
 package com.koendebruijn.portfolio.service;
 
 import com.koendebruijn.portfolio.exception.UnableToRentCarException;
-import com.koendebruijn.portfolio.service.RentService;
 import org.junit.Assert;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 public class RentServiceTest {
     private final RentService underTest = RentService.getInstance();
