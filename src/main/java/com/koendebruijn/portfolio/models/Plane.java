@@ -1,17 +1,11 @@
 package com.koendebruijn.portfolio.models;
 
-public class Plane {
-    private int weight;
-
-    public Plane(int weight) {
-        this.weight = weight;
-    }
+public record Plane(int weight) {
 
     public boolean canTakeoff(int headwindSpeed, boolean hasPermission) {
-        throw new UnsupportedOperationException();
-    }
+        final int MAX_WEIGHT = 3500;
+        final int MAX_HEADWIND_SPEED_KMH = 50;
 
-    public int getWeight() {
-        return weight;
+        return hasPermission && (weight < MAX_WEIGHT) && (headwindSpeed < MAX_HEADWIND_SPEED_KMH);
     }
 }
