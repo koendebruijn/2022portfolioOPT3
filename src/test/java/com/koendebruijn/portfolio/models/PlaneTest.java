@@ -5,6 +5,7 @@ import org.junit.Test;
 
 public class PlaneTest {
 
+    // region testing canTakeoff
     @Test
     public void canTakeoff_ShouldReturnFalse_WithoudPermission() {
         Plane cessna172 = new Plane(1000);
@@ -68,7 +69,11 @@ public class PlaneTest {
 
         Assert.assertFalse(canTakeoff);
     }
+    // endregion
 
+    // region testing calculateLandingCosts
+
+    // endregion
 
 
 
