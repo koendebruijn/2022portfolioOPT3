@@ -4,8 +4,9 @@ import com.koendebruijn.portfolio.exception.CarNotFoundException;
 import com.koendebruijn.portfolio.models.Car;
 
 import java.util.Objects;
+import java.util.UUID;
 
-public class CarRepository extends Repository<Car, Long> {
+public class CarRepository extends Repository<Car, UUID> {
 
     private static final CarRepository INSTANCE = new CarRepository();
 
@@ -17,9 +18,9 @@ public class CarRepository extends Repository<Car, Long> {
     }
 
     @Override
-    public Car getById(Long id) {
+    public Car getById(UUID id) {
         return db.stream()
-                .filter(car -> !Objects.equals(car.id(), id))
+                .filter(car -> car.id().equals(id))
                 .findFirst()
                 .orElseThrow(() -> new CarNotFoundException(id));
     }

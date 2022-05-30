@@ -1,6 +1,8 @@
 package com.koendebruijn.portfolio.models;
 
-public record Truck(Long id, double maximumLoad, double weight) implements Rentable {
+import java.util.UUID;
+
+public record Truck(UUID id, double maximumLoad, double weight) implements Rentable {
     @Override
     public double calculateRent(int daysRented) {
         final double RENT_PER_LOAD_KG = 0.1;

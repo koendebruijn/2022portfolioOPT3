@@ -1,7 +1,9 @@
 package com.koendebruijn.portfolio.exception;
 
+import java.util.UUID;
+
 public class TruckNotFoundException extends RuntimeException {
-    public TruckNotFoundException(Long id) {
-            super(String.format("Truck with id: %d not found", id));
+    public TruckNotFoundException(UUID id) {
+            super(String.format("Truck with id: %s not found", id));
     }
 }

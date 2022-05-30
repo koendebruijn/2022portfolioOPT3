@@ -3,10 +3,12 @@ package com.koendebruijn.portfolio.repository;
 import com.koendebruijn.portfolio.exception.CarNotFoundException;
 import com.koendebruijn.portfolio.exception.TruckNotFoundException;
 import com.koendebruijn.portfolio.models.Car;
+import com.koendebruijn.portfolio.models.Truck;
 
 import java.util.Objects;
+import java.util.UUID;
 
-public class TruckRepository extends Repository<Car, Long>{
+public class TruckRepository extends Repository<Truck, UUID>{
 
     private static final TruckRepository INSTANCE = new TruckRepository();
 
@@ -17,9 +19,9 @@ public class TruckRepository extends Repository<Car, Long>{
         return INSTANCE;
     }
     @Override
-    public Car getById(Long id) {
+    public Truck getById(UUID id) {
         return db.stream()
-                .filter(truck -> !Objects.equals(truck.id(), id))
+                .filter(truck -> truck.id().equals(id))
                 .findFirst()
                 .orElseThrow(() -> new TruckNotFoundException(id));
     }

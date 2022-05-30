@@ -1,6 +1,8 @@
 package com.koendebruijn.portfolio.models;
 
-public record Car(Long id, String brand, double weight) implements Rentable {
+import java.util.UUID;
+
+public record Car(UUID id, String brand, double weight) implements Rentable {
 
     @Override
     public double calculateRent(int daysRented) {
