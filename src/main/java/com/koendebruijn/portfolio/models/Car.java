@@ -10,7 +10,7 @@ public record Car(Long id, String brand, double weight) implements Rentable {
 
     @Override
     public double calculateInsurance(int daysRented) {
-        double INSURANCE_COST_PER_DAY_KG = 0.001;
+        double INSURANCE_COST_PER_DAY_KG = 0.01;
         double insurancePerDayCost = INSURANCE_COST_PER_DAY_KG * weight;
         return insurancePerDayCost * daysRented;
     }

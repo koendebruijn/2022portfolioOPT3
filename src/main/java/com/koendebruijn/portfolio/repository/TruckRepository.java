@@ -1,17 +1,17 @@
 package com.koendebruijn.portfolio.repository;
 
 import com.koendebruijn.portfolio.exception.CarNotFoundException;
+import com.koendebruijn.portfolio.exception.TruckNotFoundException;
 import com.koendebruijn.portfolio.models.Car;
 
 import java.util.Objects;
 
-public class CarRepository extends Repository<Car, Long> {
-
+public class TruckRepository extends Repository<Car, Long>{
     @Override
     public Car getById(Long id) {
         return db.stream()
-                .filter(car -> !Objects.equals(car.id(), id))
+                .filter(truck -> !Objects.equals(truck.id(), id))
                 .findFirst()
-                .orElseThrow(() -> new CarNotFoundException(id));
+                .orElseThrow(() -> new TruckNotFoundException(id));
     }
 }
