@@ -17,13 +17,13 @@ public final class Truck extends Rentable {
         this(UUID.randomUUID(), maximumLoad, weight);
     }
 
-    public double calculateRent(int daysRented) {
+    protected double calculateRent(int daysRented) {
         final double RENT_PER_LOAD_KG = 0.1;
         double dailyRent = RENT_PER_LOAD_KG * maximumLoad;
         return dailyRent * daysRented;
     }
 
-    public double calculateInsurance(int daysRented) {
+    protected double calculateInsurance(int daysRented) {
         final double INSURANCE_PER_DAY_KG = 0.01;
         double insurancePerDayCost = INSURANCE_PER_DAY_KG * weight;
         return insurancePerDayCost * daysRented;
