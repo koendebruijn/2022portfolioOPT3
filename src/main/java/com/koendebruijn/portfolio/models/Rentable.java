@@ -1,6 +1,6 @@
 package com.koendebruijn.portfolio.models;
 
-public  interface Rentable {
-     double calculateRent(int daysRented);
-     double calculateInsurance(int daysRented);
+public  abstract class Rentable {
+     abstract double calculateRent(int daysRented);
+     abstract double calculateInsurance(int daysRented);
 }

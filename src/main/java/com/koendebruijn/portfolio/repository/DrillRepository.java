@@ -3,7 +3,6 @@ package com.koendebruijn.portfolio.repository;
 import com.koendebruijn.portfolio.exception.DrillNotFoundException;
 import com.koendebruijn.portfolio.models.Drill;
 
-import java.util.Objects;
 import java.util.UUID;
 
 public class DrillRepository extends Repository<Drill, UUID> {
@@ -19,7 +18,7 @@ public class DrillRepository extends Repository<Drill, UUID> {
     @Override
     public Drill getById(UUID id) {
         return db.stream()
-                .filter(drill -> drill.id().equals(id))
+                .filter(drill -> drill.getId().equals(id))
                 .findFirst()
                 .orElseThrow(() -> new DrillNotFoundException(id));
     }
