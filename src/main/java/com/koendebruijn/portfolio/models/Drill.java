@@ -1,6 +1,8 @@
 package com.koendebruijn.portfolio.models;
 
-public record Drill(Long id, String brand, String type) implements Rentable {
+import java.util.UUID;
+
+public record Drill(UUID id, String brand, String type) implements Rentable {
     @Override
     public double calculateRent(int daysRented) {
         final int RENT_PER_DAY = 5;

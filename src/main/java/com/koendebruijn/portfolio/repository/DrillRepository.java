@@ -1,16 +1,25 @@
 package com.koendebruijn.portfolio.repository;
 
-import com.koendebruijn.portfolio.exception.CarNotFoundException;
 import com.koendebruijn.portfolio.exception.DrillNotFoundException;
 import com.koendebruijn.portfolio.models.Drill;
 
 import java.util.Objects;
+import java.util.UUID;
 
-public class DrillRepository extends Repository<Drill, Long> {
+public class DrillRepository extends Repository<Drill, UUID> {
+    private static final DrillRepository INSTANCE = new DrillRepository();
+
+    private DrillRepository() {
+    }
+
+    public static DrillRepository getInstance() {
+        return INSTANCE;
+    }
+
     @Override
-    public Drill getById(Long id) {
+    public Drill getById(UUID id) {
         return db.stream()
-                .filter(drill -> !Objects.equals(drill.id(), id))
+                .filter(drill -> drill.id().equals(id))
                 .findFirst()
                 .orElseThrow(() -> new DrillNotFoundException(id));
     }

@@ -1,5 +1,6 @@
 package com.koendebruijn.portfolio;
 
+import com.koendebruijn.portfolio.repository.DrillRepository;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -11,6 +12,8 @@ public class HelloController {
 
     @FXML
     private Button decrementButton;
+
+    private final DrillRepository drillRepository = DrillRepository.getInstance();
 
     @FXML
     public void initialize() {
@@ -38,6 +41,6 @@ public class HelloController {
     }
 
     private void updateCountLabel() {
-        counterLabel.setText(String.format("counter: %d", count));
+        counterLabel.setText(drillRepository.findAll().get(0).brand());
     }
 }
