@@ -3,6 +3,10 @@ package com.koendebruijn.portfolio.models;
 import java.util.UUID;
 
 public record Truck(UUID id, double maximumLoad, double weight) implements Rentable {
+
+    public Truck(double maximumLoad, double weight) {
+        this(UUID.randomUUID(),maximumLoad, weight);
+    }
     @Override
     public double calculateRent(int daysRented) {
         final double RENT_PER_LOAD_KG = 0.1;

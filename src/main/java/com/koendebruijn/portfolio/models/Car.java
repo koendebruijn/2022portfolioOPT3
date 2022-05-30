@@ -3,6 +3,9 @@ package com.koendebruijn.portfolio.models;
 import java.util.UUID;
 
 public record Car(UUID id, String brand, double weight) implements Rentable {
+    public Car(String brand, double weight) {
+        this(UUID.randomUUID(), brand, weight);
+    }
 
     @Override
     public double calculateRent(int daysRented) {
