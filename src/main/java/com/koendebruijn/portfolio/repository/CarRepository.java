@@ -7,6 +7,15 @@ import java.util.Objects;
 
 public class CarRepository extends Repository<Car, Long> {
 
+    private static final CarRepository INSTANCE = new CarRepository();
+
+    private CarRepository() {
+    }
+
+    public static CarRepository getInstance() {
+        return INSTANCE;
+    }
+
     @Override
     public Car getById(Long id) {
         return db.stream()
