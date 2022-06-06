@@ -1,21 +1,13 @@
 package com.koendebruijn.portfolio.models;
 
-import java.util.Objects;
-import java.util.UUID;
-
 public final class Drill extends Rentable {
-    private final UUID id;
     private final String brand;
     private final String type;
 
-    public Drill(UUID id, String brand, String type) {
-        this.id = id;
+    public Drill(String brand, String type) {
+        super();
         this.brand = brand;
         this.type = type;
-    }
-
-    public Drill(String brand, String type) {
-        this(UUID.randomUUID(), brand, type);
     }
 
     @Override
@@ -30,9 +22,6 @@ public final class Drill extends Rentable {
         return INSURANCE_PER_DAY * daysRented;
     }
 
-    public UUID getId() {
-        return id;
-    }
 
     public String getBrand() {
         return brand;
@@ -43,16 +32,7 @@ public final class Drill extends Rentable {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(id, brand, type);
+    public String getDisplayName() {
+        return String.format("%s (type: %s)", brand, type);
     }
-
-    @Override
-    public String toString() {
-        return "Drill[" +
-                "id=" + id + ", " +
-                "brand=" + brand + ", " +
-                "type=" + type + ']';
-    }
-
 }

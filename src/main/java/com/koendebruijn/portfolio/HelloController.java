@@ -41,6 +41,6 @@ public class HelloController {
     }
 
     private void updateCountLabel() {
-        counterLabel.setText(drillRepository.findAll().get(0).brand());
+        counterLabel.setText(drillRepository.findAll().get(0).getBrand());
     }
 }

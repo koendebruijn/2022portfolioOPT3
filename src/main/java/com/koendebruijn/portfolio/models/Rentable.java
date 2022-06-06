@@ -1,16 +1,36 @@
 package com.koendebruijn.portfolio.models;
 
-public  abstract class Rentable {
-     protected abstract double calculateRent(int daysRented);
-     protected abstract double calculateInsurance(int daysRented);
+import java.util.UUID;
 
-     public double getTotalCost(int daysRented, boolean isInsured) {
-          double costs = calculateRent(daysRented);
+public abstract class Rentable {
+    protected boolean isRented = false;
+    protected UUID id;
 
-          if (isInsured) {
-               costs += calculateInsurance(daysRented);
-          }
+    public Rentable() {
+        this.id = UUID.randomUUID();
+    }
 
-          return costs;
-     }
+    protected abstract double calculateRent(int daysRented);
+
+    protected abstract double calculateInsurance(int daysRented);
+
+    public double getTotalCost(int daysRented, boolean isInsured) {
+        double costs = calculateRent(daysRented);
+
+        if (isInsured) {
+            costs += calculateInsurance(daysRented);
+        }
+
+        return costs;
+    }
+
+    public boolean isRented() {
+        return isRented;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public abstract String getDisplayName();
 }

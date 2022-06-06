@@ -1,11 +1,8 @@
 package com.koendebruijn.portfolio.repository;
 
-import com.koendebruijn.portfolio.exception.CarNotFoundException;
 import com.koendebruijn.portfolio.models.Car;
 
-import java.util.UUID;
-
-public class CarRepository extends Repository<Car, UUID> {
+public class CarRepository extends Repository<Car> {
 
     private static final CarRepository INSTANCE = new CarRepository();
 
@@ -14,13 +11,5 @@ public class CarRepository extends Repository<Car, UUID> {
 
     public static CarRepository getInstance() {
         return INSTANCE;
-    }
-
-    @Override
-    public Car getById(UUID id) {
-        return db.stream()
-                .filter(car -> car.getId().equals(id))
-                .findFirst()
-                .orElseThrow(() -> new CarNotFoundException(id));
     }
 }

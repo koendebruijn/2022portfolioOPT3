@@ -1,20 +1,13 @@
 package com.koendebruijn.portfolio.models;
 
-import java.util.UUID;
-
 public final class Truck extends Rentable {
-    private final UUID id;
     private final double maximumLoad;
     private final double weight;
 
-    public Truck(UUID id, double maximumLoad, double weight) {
-        this.id = id;
+    public Truck(double maximumLoad, double weight) {
+        super();
         this.maximumLoad = maximumLoad;
         this.weight = weight;
-    }
-
-    public Truck(double maximumLoad, double weight) {
-        this(UUID.randomUUID(), maximumLoad, weight);
     }
 
     protected double calculateRent(int daysRented) {
@@ -29,9 +22,6 @@ public final class Truck extends Rentable {
         return insurancePerDayCost * daysRented;
     }
 
-    public UUID getId() {
-        return id;
-    }
 
     public double getMaximumLoad() {
         return maximumLoad;
@@ -42,11 +32,7 @@ public final class Truck extends Rentable {
     }
 
     @Override
-    public String toString() {
-        return "Truck[" +
-                "id=" + id + ", " +
-                "maximumLoad=" + maximumLoad + ", " +
-                "weight=" + weight + ']';
+    public String getDisplayName() {
+        return String.format("Vrachtwagen met maximum lading van %,.2fKG (gewicht %,.2fKG)", maximumLoad, weight);
     }
-
 }

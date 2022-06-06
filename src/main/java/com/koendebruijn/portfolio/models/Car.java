@@ -1,20 +1,13 @@
 package com.koendebruijn.portfolio.models;
 
-import java.util.UUID;
-
 public final class Car extends Rentable {
-    private final UUID id;
     private final String brand;
     private final double weight;
 
-    public Car(UUID id, String brand, double weight) {
-        this.id = id;
+    public Car(String brand, double weight) {
+        super();
         this.brand = brand;
         this.weight = weight;
-    }
-
-    public Car(String brand, double weight) {
-        this(UUID.randomUUID(), brand, weight);
     }
 
     protected double calculateRent(int daysRented) {
@@ -29,8 +22,9 @@ public final class Car extends Rentable {
         return insurancePerDayCost * daysRented;
     }
 
-    public UUID getId() {
-        return id;
+    @Override
+    public String getDisplayName() {
+        return String.format("%s (gewicht %,.2fKG)", brand, weight);
     }
 
     public String getBrand() {
@@ -40,13 +34,4 @@ public final class Car extends Rentable {
     public double getWeight() {
         return weight;
     }
-
-    @Override
-    public String toString() {
-        return "Car[" +
-                "id=" + id + ", " +
-                "brand=" + brand + ", " +
-                "weight=" + weight + ']';
-    }
-
 }
