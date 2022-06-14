@@ -1,4 +1,4 @@
-package com.koendebruijn.portfolio.models;
+package com.koendebruijn.portfolio.model;
 
 public final class Car extends Rentable {
     private static final double INSURANCE_COST_PER_DAY_KG = 0.01;

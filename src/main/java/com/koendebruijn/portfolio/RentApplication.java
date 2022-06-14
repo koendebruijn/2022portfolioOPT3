@@ -1,8 +1,8 @@
 package com.koendebruijn.portfolio;
 
-import com.koendebruijn.portfolio.models.Car;
-import com.koendebruijn.portfolio.models.Drill;
-import com.koendebruijn.portfolio.models.Truck;
+import com.koendebruijn.portfolio.model.Car;
+import com.koendebruijn.portfolio.model.Drill;
+import com.koendebruijn.portfolio.model.Truck;
 import com.koendebruijn.portfolio.repository.CarRepository;
 import com.koendebruijn.portfolio.repository.DrillRepository;
 import com.koendebruijn.portfolio.repository.Repository;

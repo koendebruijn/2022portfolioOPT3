@@ -1,6 +1,6 @@
 package com.koendebruijn.portfolio.controller;
 
-import com.koendebruijn.portfolio.models.Car;
+import com.koendebruijn.portfolio.model.Car;
 import com.koendebruijn.portfolio.repository.CarRepository;
 import com.koendebruijn.portfolio.service.SceneService;
 import javafx.fxml.FXML;

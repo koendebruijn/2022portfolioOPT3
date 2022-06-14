@@ -1,4 +1,4 @@
-package com.koendebruijn.portfolio.models;
+package com.koendebruijn.portfolio.model;
 
 import java.util.UUID;
 

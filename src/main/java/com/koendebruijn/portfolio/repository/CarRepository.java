@@ -1,6 +1,6 @@
 package com.koendebruijn.portfolio.repository;
 
-import com.koendebruijn.portfolio.models.Car;
+import com.koendebruijn.portfolio.model.Car;
 
 public class CarRepository extends Repository<Car> {
 

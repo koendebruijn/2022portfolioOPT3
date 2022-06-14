@@ -1,4 +1,4 @@
-package com.koendebruijn.portfolio.models;
+package com.koendebruijn.portfolio.model;
 
 public record Plane(int weight, int passengers, boolean isDutch) {
 

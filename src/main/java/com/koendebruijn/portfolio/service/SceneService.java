@@ -16,9 +16,6 @@ public class SceneService {
             stage.setTitle(title);
             stage.setScene(scene);
             stage.show();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        } catch (IOException ignored) {}
     }
 }

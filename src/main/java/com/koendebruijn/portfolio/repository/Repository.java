@@ -1,13 +1,13 @@
 package com.koendebruijn.portfolio.repository;
 
-import com.koendebruijn.portfolio.models.Rentable;
+import com.koendebruijn.portfolio.model.Rentable;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public abstract class Repository<T extends Rentable> {
-    protected final List<T> db = new ArrayList<>();
+    private final List<T> db = new ArrayList<>();
 
     public T getById(UUID id) {
         return db.stream()

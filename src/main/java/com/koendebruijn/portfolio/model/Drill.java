@@ -1,4 +1,4 @@
-package com.koendebruijn.portfolio.models;
+package com.koendebruijn.portfolio.model;
 
 public final class Drill extends Rentable {
     public static final int RENT_PER_DAY = 5;

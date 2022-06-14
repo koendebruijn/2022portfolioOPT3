@@ -1,4 +1,4 @@
-package com.koendebruijn.portfolio.models;
+package com.koendebruijn.portfolio.model;
 
 public final class Truck extends Rentable {
     public static final double RENT_PER_LOAD_KG = 0.1;
