@@ -2,7 +2,7 @@ package com.koendebruijn.portfolio.controller;
 
 import com.koendebruijn.portfolio.model.Car;
 import com.koendebruijn.portfolio.repository.CarRepository;
-import com.koendebruijn.portfolio.service.SceneService;
+import com.koendebruijn.portfolio.utils.SceneUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
@@ -34,7 +34,7 @@ public class DashboardController {
 
     @FXML
     private void openNewCarStage() {
-        SceneService.switchStage("add-car.fxml",  (Stage) menuBar.getScene().getWindow());
+        SceneUtils.switchStage("add-car.fxml",  (Stage) menuBar.getScene().getWindow());
     }
 
 

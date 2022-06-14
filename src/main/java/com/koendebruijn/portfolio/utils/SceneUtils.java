@@ -1,4 +1,4 @@
-package com.koendebruijn.portfolio.service;
+package com.koendebruijn.portfolio.utils;
 
 import com.koendebruijn.portfolio.RentApplication;
 import javafx.fxml.FXMLLoader;
@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SceneService {
+public class SceneUtils {
 
     private static final String TITLE = "RentApplication";
 

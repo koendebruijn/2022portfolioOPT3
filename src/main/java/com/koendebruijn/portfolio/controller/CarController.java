@@ -2,7 +2,7 @@ package com.koendebruijn.portfolio.controller;
 
 import com.koendebruijn.portfolio.model.Car;
 import com.koendebruijn.portfolio.repository.CarRepository;
-import com.koendebruijn.portfolio.service.SceneService;
+import com.koendebruijn.portfolio.utils.SceneUtils;
 import com.koendebruijn.portfolio.utils.StringUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -35,7 +35,7 @@ public class CarController {
         }
 
         carRepository.save(new Car(brand, Double.parseDouble(weight)));
-        SceneService.switchStage("dashboard.fxml", (Stage) saveCar.getScene().getWindow());
+        SceneUtils.switchStage("dashboard.fxml", (Stage) saveCar.getScene().getWindow());
     }
 
     private List<String> getErrors(String brand, String weight) {
