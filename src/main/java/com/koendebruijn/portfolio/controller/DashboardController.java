@@ -34,9 +34,7 @@ public class DashboardController {
 
     @FXML
     private void openNewCarStage() {
-        SceneService.openNewStage("add-car.fxml", "Voeg een nieuwe auto toe");
-        Stage stage = (Stage) menuBar.getScene().getWindow();
-        stage.close();
+        SceneService.switchStage("add-car.fxml",  (Stage) menuBar.getScene().getWindow());
     }
 
 
