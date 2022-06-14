@@ -32,5 +32,5 @@ public abstract class Rentable {
         return id;
     }
 
-    public abstract String getDisplayName();
+    public abstract String toString();
 }

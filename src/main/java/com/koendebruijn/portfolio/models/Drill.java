@@ -1,6 +1,8 @@
 package com.koendebruijn.portfolio.models;
 
 public final class Drill extends Rentable {
+    public static final int RENT_PER_DAY = 5;
+    public static final int INSURANCE_PER_DAY = 1;
     private final String brand;
     private final String type;
 
@@ -12,13 +14,11 @@ public final class Drill extends Rentable {
 
     @Override
     protected double calculateRent(int daysRented) {
-        final int RENT_PER_DAY = 5;
         return RENT_PER_DAY * daysRented;
     }
 
     @Override
     protected double calculateInsurance(int daysRented) {
-        final int INSURANCE_PER_DAY = 1;
         return INSURANCE_PER_DAY * daysRented;
     }
 
@@ -32,7 +32,7 @@ public final class Drill extends Rentable {
     }
 
     @Override
-    public String getDisplayName() {
+    public String toString() {
         return String.format("%s (type: %s)", brand, type);
     }
 }

@@ -1,6 +1,5 @@
 package com.koendebruijn.portfolio.service;
 
-import com.koendebruijn.portfolio.exception.UnableToRentCarException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,7 +13,7 @@ public class RentServiceTest {
         int age = 17;
 
         // When
-        Assert.assertThrows(UnableToRentCarException.class, () -> underTest.calculateExtraCost(age));
+        Assert.assertThrows(RuntimeException.class, () -> underTest.calculateExtraCost(age));
     }
 
     @Test

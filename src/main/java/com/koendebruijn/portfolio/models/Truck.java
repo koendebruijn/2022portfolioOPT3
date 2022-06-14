@@ -1,6 +1,8 @@
 package com.koendebruijn.portfolio.models;
 
 public final class Truck extends Rentable {
+    public static final double RENT_PER_LOAD_KG = 0.1;
+    public static final double INSURANCE_PER_DAY_KG = 0.01;
     private final double maximumLoad;
     private final double weight;
 
@@ -11,13 +13,11 @@ public final class Truck extends Rentable {
     }
 
     protected double calculateRent(int daysRented) {
-        final double RENT_PER_LOAD_KG = 0.1;
         double dailyRent = RENT_PER_LOAD_KG * maximumLoad;
         return dailyRent * daysRented;
     }
 
     protected double calculateInsurance(int daysRented) {
-        final double INSURANCE_PER_DAY_KG = 0.01;
         double insurancePerDayCost = INSURANCE_PER_DAY_KG * weight;
         return insurancePerDayCost * daysRented;
     }
@@ -32,7 +32,7 @@ public final class Truck extends Rentable {
     }
 
     @Override
-    public String getDisplayName() {
+    public String toString() {
         return String.format("Vrachtwagen met maximum lading van %,.2fKG (gewicht %,.2fKG)", maximumLoad, weight);
     }
 }

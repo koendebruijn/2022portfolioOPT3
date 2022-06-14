@@ -1,6 +1,9 @@
 package com.koendebruijn.portfolio.models;
 
 public final class Car extends Rentable {
+    private static final double INSURANCE_COST_PER_DAY_KG = 0.01;
+    private static final double RENT_PRICE_PER_DAY = 50;
+
     private final String brand;
     private final double weight;
 
@@ -11,19 +14,16 @@ public final class Car extends Rentable {
     }
 
     protected double calculateRent(int daysRented) {
-        double RENT_PRICE_PER_DAY = 50;
         return RENT_PRICE_PER_DAY * daysRented;
     }
 
     @Override
     protected double calculateInsurance(int daysRented) {
-        double INSURANCE_COST_PER_DAY_KG = 0.01;
         double insurancePerDayCost = INSURANCE_COST_PER_DAY_KG * weight;
         return insurancePerDayCost * daysRented;
     }
 
-    @Override
-    public String getDisplayName() {
+    public String toString() {
         return String.format("%s (gewicht %,.2fKG)", brand, weight);
     }
 
