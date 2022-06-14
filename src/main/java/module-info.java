@@ -5,4 +5,7 @@ module com.koendebruijn.portfolio {
 
     opens com.koendebruijn.portfolio to javafx.fxml;
     exports com.koendebruijn.portfolio;
+
+    opens com.koendebruijn.portfolio.controller to javafx.fxml;
+    exports com.koendebruijn.portfolio.controller;
 }
