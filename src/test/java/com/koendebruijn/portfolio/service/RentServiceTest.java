@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class RentServiceTest {
+    private static final double DELTA = 1e-15;
     private final RentService underTest = RentService.getInstance();
 
     // region tests calculateExtraCost()
@@ -26,7 +27,7 @@ public class RentServiceTest {
         double extraCosts = underTest.calculateExtraCost(age);
 
         // Then
-        Assert.assertEquals(expected, extraCosts, 0.1);
+        Assert.assertEquals(expected, extraCosts, DELTA);
     }
 
     @Test
@@ -39,7 +40,7 @@ public class RentServiceTest {
         double extraCosts = underTest.calculateExtraCost(age);
 
         // Then
-        Assert.assertEquals(expected, extraCosts, 0.1);
+        Assert.assertEquals(expected, extraCosts, DELTA);
     }
 
     @Test
@@ -52,7 +53,7 @@ public class RentServiceTest {
         double extraCosts = underTest.calculateExtraCost(age);
 
         // Then
-        Assert.assertEquals(expected, extraCosts, 0.1);
+        Assert.assertEquals(expected, extraCosts, DELTA);
     }
 
     @Test
@@ -65,7 +66,7 @@ public class RentServiceTest {
         double extraCosts = underTest.calculateExtraCost(age);
 
         // Then
-        Assert.assertEquals(expected, extraCosts, 0.1);
+        Assert.assertEquals(expected, extraCosts, DELTA);
     }
     // endregion
 }

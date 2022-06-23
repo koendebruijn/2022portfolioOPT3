@@ -1,6 +1,11 @@
 package com.koendebruijn.portfolio.service;
 
 public class RentService {
+    private static final RentService INSTANCE = new RentService();
+
+    public static RentService getInstance() {
+        return INSTANCE;
+    }
 
     public double calculateExtraCost(int age) {
         final double EXTRA_COST_5_PERCENT = 0.05;

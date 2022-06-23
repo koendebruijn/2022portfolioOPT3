@@ -73,23 +73,70 @@ public class PlaneTest {
     // endregion
 
     // region testing calculateLandingCosts
-
     @Test
     public void calculateLandingCosts_PW_1() {
         // given
-        Plane plane = new Plane(6000, 2, true);
+        Plane plane = new Plane(500, 1, true);
 
         // When
         double landingCosts = plane.calculateLandingCosts(true);
 
         // Then
-        Assert.assertEquals(3993, landingCosts, DELTA);
+        Assert.assertEquals(1089.0, landingCosts, DELTA);
     }
 
     @Test
     public void calculateLandingCosts_PW_2() {
         // given
-        Plane plane = new Plane(5000, 3, true);
+        Plane plane = new Plane(500, 3, false);
+
+        // When
+        double landingCosts = plane.calculateLandingCosts(false);
+
+        // Then
+        Assert.assertEquals(150.0, landingCosts, DELTA);
+    }
+
+    @Test
+    public void calculateLandingCosts_PW_3() {
+        // given
+        Plane plane = new Plane(3000, 1, true);
+
+        // When
+        double landingCosts = plane.calculateLandingCosts(false);
+
+        // Then
+        Assert.assertEquals(605.0, landingCosts, DELTA);
+    }
+
+    @Test
+    public void calculateLandingCosts_PW_4() {
+        // given
+        Plane plane = new Plane(3000, 3, false);
+
+        // When
+        double landingCosts = plane.calculateLandingCosts(true);
+
+        // Then
+        Assert.assertEquals(1550.0, landingCosts, DELTA);
+    }
+
+    @Test
+    public void calculateLandingCosts_PW_5() {
+        // given
+        Plane plane = new Plane(6000, 1, false);
+
+        // When
+        double landingCosts = plane.calculateLandingCosts(true);
+
+        // Then
+        Assert.assertEquals(3300.0, landingCosts, DELTA);
+    }
+
+    @Test
+    public void calculateLandingCosts_PW_6() {
+        // given
+        Plane plane = new Plane(6000, 3, true);
 
         // When
         double landingCosts = plane.calculateLandingCosts(false);
@@ -97,44 +144,5 @@ public class PlaneTest {
         // Then
         Assert.assertEquals(4537.5, landingCosts, DELTA);
     }
-
-    @Test
-    public void calculateLandingCosts_PW_3() {
-        // given
-        Plane plane = new Plane(4000, 1, false);
-
-        // When
-        double landingCosts = plane.calculateLandingCosts(true);
-
-        // Then
-        Assert.assertEquals(1300, landingCosts, DELTA);
-    }
-
-    @Test
-    public void calculateLandingCosts_PW_4() {
-        // given
-        Plane plane = new Plane(1000, 2, false);
-
-        // When
-        double landingCosts = plane.calculateLandingCosts(true);
-
-        // Then
-        Assert.assertEquals(1300, landingCosts, DELTA);
-    }
-
-    @Test
-    public void calculateLandingCosts_PW_6() {
-        // given
-        Plane plane = new Plane(800, 1, true);
-
-        // When
-        double landingCosts = plane.calculateLandingCosts(false);
-
-        // Then
-        Assert.assertEquals(121, landingCosts, DELTA);
-    }
     // endregion
-
-
-
 }
